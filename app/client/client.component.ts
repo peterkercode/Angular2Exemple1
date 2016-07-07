@@ -24,12 +24,13 @@ export class ClientDetailComponent {
     submitted = false;
 
     ngOnInit() {
-        //this._listeClients = this._clientService.getClients();
-        this._clientService.getClients()
+        this._listeClients = this._clientService.getClients();
+        this.setEncours(0);
+        /*this._clientService.getClients()
             .then(clients => {
                 this._listeClients = clients;
                 this.setEncours(0);
-                });
+                });*/
     }
 
     onSubmit() {
@@ -56,6 +57,10 @@ export class ClientDetailComponent {
         if (this._indiceEnCours > 0)
             this._indiceEnCours--;
         this.setEncours(this._indiceEnCours);
+    }
+    
+    private supprimerClients() {
+        
     }
 
     private setEncours(ind: number): void {
